@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #eef2ff, #dbeafe);
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            text-align: center;
+            font-size: 45px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #334155;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .slabs {
+            margin-top: 25px;
+            padding: 18px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .slabs h3 {
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .slabs p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="icon">⚡</div>
+
+    <h1>Electricity Bill Calculator</h1>
+
+    <p class="subtitle">
+        Calculate your electricity bill instantly
+    </p>
+
+    <form action="bill" method="post">
+
+        <label for="name">Consumer Name</label>
+        <input type="text"
+               id="name"
+               name="name"
+               placeholder="Enter your name"
+               required>
+
+        <label for="units">Units Consumed</label>
+        <input type="number"
+               id="units"
+               name="units"
+               placeholder="Enter units consumed"
+               min="0"
+               step="0.01"
+               required>
+
+        <button type="submit">Calculate Electricity Bill</button>
+
+    </form>
+
+    <div class="slabs">
+        <h3>Electricity Rates</h3>
+
+        <p>
+            First 50 units → ₹3.50/unit<br>
+            Next 100 units → ₹4.00/unit<br>
+            Next 100 units → ₹5.20/unit<br>
+            Above 250 units → ₹6.50/unit
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
